@@ -11,13 +11,13 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img
-            src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80"
-            class="user-avatar"
-          />
+          <img :src="auth.avatar" class="user-avatar" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
+          <el-dropdown-item>
+            <span style="display:block;">{{ auth.name }}</span>
+          </el-dropdown-item>
+          <router-link to="/" divided>
             <el-dropdown-item>
               Home
             </el-dropdown-item>
@@ -41,14 +41,14 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['sidebar', 'avatar'])
+    ...mapGetters(['sidebar', 'avatar', 'auth'])
   },
   methods: {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
     async logout() {
-      await this.$store.dispatch('user/logout')
+      await this.$store.dispatch('app/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }

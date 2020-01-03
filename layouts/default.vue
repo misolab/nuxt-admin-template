@@ -20,6 +20,7 @@
 import ResizeHandler from '@/utils/mixins/ResizeHandler'
 export default {
   name: 'Default',
+  middleware: 'auth',
   mixins: [ResizeHandler],
   computed: {
     sidebar() {

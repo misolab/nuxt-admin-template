@@ -62,6 +62,12 @@
 <script>
 export default {
   name: 'Login',
+  middleware({ store, redirect }) {
+    // If the user is not authenticated
+    if (store.getters.auth) {
+      return redirect('/')
+    }
+  },
   layout: 'empty',
   data() {
     return {
@@ -98,7 +104,9 @@ export default {
       })
     },
     handleLogin() {
-      this.$router.push('/dashboard')
+      this.$store
+        .dispatch('app/setAuth', this.loginForm.username)
+        .then(this.$router.push('/'))
     }
   }
 }
