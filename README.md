@@ -1,6 +1,6 @@
 # nuxt-admin-template
 
-> A basic nuxt admin template with Element UI & lint
+> A basic nuxt admin template with Element UI & Vuex & Auth Middleware & lint
 
 **Live demo:** (http://)
 
