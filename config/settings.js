@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Nuxt Element Admin',
+  title: 'Nuxt Admin Template',
 
   /**
    * @type {boolean} true | false
