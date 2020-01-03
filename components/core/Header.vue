@@ -24,7 +24,7 @@
           </router-link>
           <a
             target="_blank"
-            href="https://panjiachen.github.io/vue-element-admin-site/#/"
+            href="https://github.com/AhmdYehia/nuxt-admin-template"
           >
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>

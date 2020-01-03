@@ -2,7 +2,7 @@ module.exports = {
   routes: [
     {
       key: 'dashboard',
-      path: '/',
+      path: '/dashboard',
       title: 'Dashboard',
       children: false,
       icon: 'el-icon-menu'
@@ -16,11 +16,6 @@ module.exports = {
           key: 'login',
           path: '/login',
           title: 'Login'
-        },
-        {
-          key: 'register',
-          path: '/register',
-          title: 'Register'
         }
       ]
     },
