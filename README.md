@@ -1,9 +1,18 @@
 # nuxt-admin-template
 
-> A minimal nuxt admin template with Element UI & lint
+> A basic nuxt admin template with Element UI & lint
 
 **Live demo:** (http://)
 
+##This Template Built bassed [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
+
+**The current version is `v1.0+` build on `nuxt v^2.0.0` & `element-ui v^2.4.11`.
+
+**Many thanks for [PanJiaChen](https://github.com/PanJiaChen)
+
+# recommends for vue projects
+**[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
+**[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
 ## Build Setup
 
