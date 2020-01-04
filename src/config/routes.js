@@ -20,11 +20,11 @@ module.exports = {
       ]
     },
     {
-      key: 'settings',
-      path: '/settings',
-      title: 'Settings',
+      key: 'error',
+      path: '/error',
+      title: 'Error',
       children: false,
-      icon: 'el-icon-setting'
+      icon: 'el-icon-error'
     }
   ]
 }

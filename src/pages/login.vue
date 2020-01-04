@@ -62,12 +62,6 @@
 <script>
 export default {
   name: 'Login',
-  middleware({ store, redirect }) {
-    // If the user is not authenticated
-    if (store.getters.auth) {
-      return redirect('/')
-    }
-  },
   layout: 'empty',
   data() {
     return {

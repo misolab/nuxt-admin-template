@@ -1,9 +1,9 @@
 {
-  "name": "admin",
+  "name": "nuxt-admin-template",
   "version": "1.0.0",
-  "description": "My swell Nuxt.js project",
-  "author": "",
-  "private": true,
+  "description": "Basic Nuxt Admin Template with Element-Ui & vuex & firebase",
+  "author": "Ahmed Yehia <eng.ay88@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "build:firebase": "yarn clean && yarn build && yarn copy && cd functions && yarn",
     "clean": "yarn clean:public && yarn clean:functions && yarn clean:static",
@@ -47,5 +47,9 @@
     "normalize.css": "^8.0.1",
     "prettier": "^1.16.4",
     "sass-loader": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
   }
 }
