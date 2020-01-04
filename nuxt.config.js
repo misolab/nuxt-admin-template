@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   mode: 'universal',
   /*
    ** Headers of the page
@@ -16,6 +16,8 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  srcDir: 'src',
+  buildDir: 'functions/.nuxt',
   /*
    ** Customize the progress-bar color
    */
@@ -38,15 +40,24 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios'
+  ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
    ** Build configuration
    */
   build: {
     transpile: [/^element-ui/],
+    extractCSS: true,
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
 }
