@@ -12,14 +12,13 @@
         <h3 class="title">Admin Login</h3>
       </div>
 
-      <el-form-item prop="username">
+      <el-form-item prop="email">
         <i class="icon el-icon-user"></i>
         <el-input
-          ref="username"
-          v-model="loginForm.username"
-          placeholder="Username"
-          name="username"
-          type="email"
+          ref="email"
+          v-model="loginForm.email"
+          placeholder="UserName"
+          name="email"
           tabindex="1"
           auto-complete="on"
         />
@@ -50,7 +49,7 @@
 
       <el-button
         :loading="loading"
-        @click.native.prevent="handleLogin"
+        @click.native.prevent="handleLogin(loginForm)"
         type="success"
         style="width:100%;margin-bottom:30px;"
         >Login</el-button
@@ -66,12 +65,18 @@ export default {
   data() {
     return {
       loginForm: {
-        username: 'admin',
+        email: 'admin',
         password: '111111'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur' }],
-        password: [{ required: true, trigger: 'blur' }]
+        email: [
+          {
+            type: 'email',
+            min: 6,
+            trigger: ['blur', 'change']
+          }
+        ],
+        password: [{ required: true, min: 8, trigger: 'blur' }]
       },
       loading: false,
       passwordType: 'password',
@@ -97,10 +102,18 @@ export default {
         this.$refs.password.focus()
       })
     },
-    handleLogin() {
-      this.$store
-        .dispatch('app/setAuth', this.loginForm.username)
-        .then(this.$router.push('/'))
+    handleLogin(loginForm) {
+      this.loading = true
+      this.$refs.loginForm.validate((valid) => {
+        if (valid) {
+          this.$store
+            .dispatch('app/setAuth', this.loginForm.email)
+            .then(this.$router.push('/'))
+        } else {
+          this.loading = false
+          return false
+        }
+      })
     }
   }
 }
