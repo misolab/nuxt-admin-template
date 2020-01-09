@@ -11,11 +11,11 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="auth.avatar" class="user-avatar" />
+          <img :src="avatar" class="user-avatar" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <el-dropdown-item>
-            <span style="display:block;">{{ auth.name }}</span>
+            <span style="display:block;">{{ auth ? auth.name : 'admin' }}</span>
           </el-dropdown-item>
           <router-link to="/" divided>
             <el-dropdown-item>
@@ -49,7 +49,7 @@ export default {
     },
     async logout() {
       await this.$store.dispatch('app/logout')
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      this.$router.push(`/login`)
     }
   }
 }

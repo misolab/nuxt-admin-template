@@ -1,27 +1,35 @@
 <template>
   <div v-if="!item.hidden">
     <el-menu-item
-      :index="item.key"
+      :index="item.name"
       :route="{ path: item.path }"
-      v-if="item.children == false"
-      :key="item.key"
+      v-if="!item.children"
+      :key="item.name"
     >
-      <i :class="item.icon" class="icon"></i>
-      <span slot="title">{{ item.title }}</span>
+      <i
+        v-if="item.meta && item.meta.icon"
+        :class="`el-icon-` + item.meta.icon"
+        class="icon"
+      ></i>
+      <span slot="title">{{ item.meta.title }}</span>
     </el-menu-item>
 
-    <el-submenu :index="item.key" v-else>
+    <el-submenu :index="item.name" v-else>
       <template slot="title">
-        <i :class="item.icon" class="icon"></i>
-        <span slot="title">{{ item.title }}</span>
+        <i
+          v-if="item.meta && item.meta.icon"
+          :class="`el-icon-` + item.meta.icon"
+          class="icon"
+        ></i>
+        <span slot="title">{{ item.meta.title }}</span>
       </template>
       <el-menu-item
         v-for="subMenu in item.children"
-        :index="subMenu.key"
+        :index="subMenu.name"
         :route="{ path: subMenu.path }"
-        :key="subMenu.key"
+        :key="subMenu.name"
       >
-        <span>{{ subMenu.title }}</span>
+        <span>{{ subMenu.meta.title }}</span>
       </el-menu-item>
     </el-submenu>
   </div>

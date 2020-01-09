@@ -25,9 +25,9 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-
-export default {}
+export default {
+  name: 'Dashboard'
+}
 </script>
 
 <style>

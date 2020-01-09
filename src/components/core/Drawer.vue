@@ -30,7 +30,7 @@ export default {
   computed: {
     ...mapGetters(['sidebar']),
     routes() {
-      return this.$store.state.settings.routes
+      return this.$router.options.routes
     },
     showLogo() {
       return this.$store.state.settings.sidebarLogo
@@ -42,7 +42,13 @@ export default {
       return !this.sidebar.opened
     },
     activeRoute() {
-      return this.$route.path
+      const route = this.$route
+      const { meta, path } = route
+      // if set path, the sidebar will highlight the path you set
+      if (meta.activeMenu) {
+        return meta.activeMenu
+      }
+      return path
     }
   },
   methods: {}
