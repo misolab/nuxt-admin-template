@@ -1,9 +1,9 @@
 {
-  "name": "survey-admin",
+  "name": "nuxt-admin-template",
   "version": "1.0.0",
-  "description": "My breathtaking Nuxt.js project",
+  "description": "A basic nuxt admin template with Element UI",
   "author": "AhmdYehia",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/server/index.js --watch server",
     "build": "nuxt build",
