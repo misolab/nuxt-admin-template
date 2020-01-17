@@ -47,13 +47,30 @@ yarn start
 yarn generate
 ```
 
-## deploy firebase
+## deploy firebase hosting
 
 \*\* change branch to functions
 
 ```bash
 # clean folders and build to firebase
 yarn build:firebase
+
+#publish to firebase hosting
+yarn deploy
+
+```
+
+## deploy firebase Auth
+
+# add firebase project config to 'modules/nuxt-fire' in nuxt.config.js file
+
+# using (https://github.com/lupas/nuxt-fire)
+
+\*\* change branch to firebase
+
+```bash
+# clean folders and build to firebase
+
 
 #publish to firebase hosting
 yarn deploy
