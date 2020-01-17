@@ -15,7 +15,9 @@
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <el-dropdown-item>
-            <span style="display:block;">{{ auth ? auth.name : 'admin' }}</span>
+            <span style="display:block;">{{
+              auth ? auth.email : 'admin'
+            }}</span>
           </el-dropdown-item>
           <router-link to="/" divided>
             <el-dropdown-item>
@@ -48,8 +50,8 @@ export default {
       this.$store.dispatch('app/toggleSideBar')
     },
     async logout() {
-      await this.$store.dispatch('app/logout')
-      this.$router.push(`/login`)
+      await this.$store.dispatch('auth/logout')
+      this.$router.push(`/`)
     }
   }
 }

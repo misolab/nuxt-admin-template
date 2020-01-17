@@ -7,6 +7,5 @@ export default () => ({
       : true,
     withoutAnimation: false
   },
-  device: 'desktop',
-  auth: null
+  device: 'desktop'
 })

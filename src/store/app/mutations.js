@@ -17,13 +17,5 @@ export default {
   },
   TOGGLE_DEVICE: (state, device) => {
     state.device = device
-  },
-  SET_AUTH: (state, username) => {
-    state.auth = {
-      name: username
-    }
-  },
-  USER_LOGOUT: (state) => {
-    state.auth = null
   }
 }

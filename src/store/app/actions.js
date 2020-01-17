@@ -7,11 +7,5 @@ export default {
   },
   toggleDevice({ commit }, device) {
     commit('TOGGLE_DEVICE', device)
-  },
-  setAuth({ commit }, name) {
-    commit('SET_AUTH', name)
-  },
-  logout({ commit }) {
-    commit('USER_LOGOUT')
   }
 }
