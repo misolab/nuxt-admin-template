@@ -46,7 +46,7 @@
           />
         </span>
       </el-form-item>
-
+      <el-alert v-if="hasErr" :title="errMsg" type="error" show-icon></el-alert>
       <el-button
         :loading="loading"
         @click.native.prevent="handleLogin(loginForm)"
@@ -68,6 +68,8 @@ export default {
         email: 'admin@a.com',
         password: '11111111'
       },
+      hasErr: false,
+      errMsg: '',
       loginRules: {
         email: [
           {
@@ -79,16 +81,7 @@ export default {
         password: [{ required: true, min: 8, trigger: 'blur' }]
       },
       loading: false,
-      passwordType: 'password',
-      redirect: undefined
-    }
-  },
-  watch: {
-    $route: {
-      handler(route) {
-        this.redirect = route.query && route.query.redirect
-      },
-      immediate: true
+      passwordType: 'password'
     }
   },
   methods: {
@@ -104,16 +97,22 @@ export default {
     },
     handleLogin(loginForm) {
       this.loading = true
-      this.$refs.loginForm.validate((valid) => {
-        if (valid) {
-          this.$store
-            .dispatch('auth/login', this.loginForm)
-            .then(this.$router.push('/admin'))
-        } else {
-          this.loading = false
-          return false
-        }
-      })
+      try {
+        this.$refs.loginForm.validate((valid) => {
+          if (!valid) {
+            this.loading = false
+            return false
+          } else {
+            this.$store.dispatch('auth/login', this.loginForm).catch((err) => {
+              this.hasErr = true
+              this.errMsg = err.message
+              this.loading = false
+            })
+          }
+        })
+      } catch (err) {
+        throw err
+      }
     }
   }
 }
