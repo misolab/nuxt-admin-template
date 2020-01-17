@@ -8,15 +8,15 @@
 
 ## This Template Built bassed [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 
-\*\* The current version is `v1.0+` build on `nuxt v^2.0.0` & `element-ui v^2.4.11`.
+\* The current version is `v1.0+` build on `nuxt v^2.0.0` & `element-ui v^2.4.11`.
 
-\*\* Many thanks for [PanJiaChen](https://github.com/PanJiaChen)
+\* Many thanks for [PanJiaChen](https://github.com/PanJiaChen)
 
 # recommends for vue projects
 
-\*\* [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
+\* [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)
 
-\*\* [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+\* [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
 ## Build Setup
 
@@ -49,7 +49,7 @@ yarn generate
 
 ## deploy firebase hosting
 
-\*\* change branch to functions
+\* change branch to functions
 
 ```bash
 # clean folders and build to firebase
@@ -62,11 +62,11 @@ yarn deploy
 
 ## deploy firebase Auth
 
-# add firebase project config to 'modules/nuxt-fire' in nuxt.config.js file
+add firebase project config to 'modules/nuxt-fire' in nuxt.config.js file
 
-# using (https://github.com/lupas/nuxt-fire)
+\* using [nuxt-fire](https://github.com/lupas/nuxt-fire)
 
-\*\* change branch to firebase
+\* change branch to firebase
 
 ```bash
 # clean folders and build to firebase
