@@ -1,13 +1,14 @@
 import Cookie from 'js-cookie'
 export default {
-  async login({ commit }, data) {
+  login({ commit }, data) {
     try {
       // check user
-      await this.$fireAuth.signInWithEmailAndPassword(data.email, data.password)
+      // await this.$fireAuth.signInWithEmailAndPassword(data.email, data.password)
 
       // get JWT from firebase
-      const token = await this.$fireAuth.currentUser.getIdToken()
-      const { email, uid } = this.$fireAuth.currentUser
+      const email = data.email
+      const uid = data.password
+      const token = `${email}-${uid}`
 
       // set jwt to cookies
       Cookie.set('access_token', token)
